@@ -1,4 +1,3 @@
-# utils.py
 import google.generativeai as genai
 from django.db import connection
 from django.conf import settings
