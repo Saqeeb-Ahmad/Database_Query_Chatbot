@@ -32,7 +32,10 @@ class ChatbotView(APIView):
             validate_query(sql_query, valid_tables)
 
             # Execute query and get results
-            results, columns = self._execute_query(sql_query)
+            query_result = self._execute_query(sql_query)
+            results = query_result[0]
+            columns = query_result[1]
+
             
             # Generate summary
             summary = self._format_summary(results, columns)
